@@ -18,6 +18,10 @@
 
 ### 概要
 
+- クラサバ両方 JS でコーディングできる
+- リアルタイム Web アプリがつくれる
+- デプロイ環境が準備されている（Heroku とかにもデプロイできるみたい）
+
 ### 関連
 
 - JavaScript
@@ -31,5 +35,6 @@
 - `$ curl install.meteor.com sh--` // インストール
 - `$ meteor create <project_name>` // プロジェクト作成
 - `$ meteor` // プロジェクト実行
-- `$ meteor deploy <host_name>.meteor.com` // デプロイ
+- `$ meteor add <PKG_name>` // パッケージの追加
+- `$ meteor deploy [--password] <host_name>.meteor.com` // デプロイ
 
