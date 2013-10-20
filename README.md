@@ -4,6 +4,9 @@
 
 そろそろ有償版とかでてんのかと思ったけど、まだここなのね（2013/10/20現在）
 
+## 現状 v1.1
+http://simple-twitter.meteor.com/
+
 ## 参考
 - [Meteor.js](http://www.meteor.com/ "Meteor.js")
 - [Twitter API](http://qiita.com/rev86/items/eaef78275ba295c9858b "Twitter API")
