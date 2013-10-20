@@ -1,17 +1,10 @@
 if (Meteor.isClient) {
-    // ①テンプレート関数の直接呼び出し
-    // 初期化が完了したら
-    Meteor.startup(function() {
-        var header = Template.Header({
-            dateTime: new Date
-        });
-        var playerList = Template.PlayerList({
-            //name : Meteor.call('getUserName', 'Yutaro', 'Tanaka')
-            name: "Yutaro"
-        });
-        document.body.innerHTML = header + playerList;
-    });
+    // ②テンプレート関数の属性として定義
+    Template.Header.dateTime = new Date;
+    //Template.PlayerList.name = "Yutaro"; この書き方はだめ「name」
+    Template.PlayerList.playerName = "Yutaro";
 }
+
 if (Meteor.isServer) {
     // プロセスが開始したら呼び出される
     Meteor.startup(function() {
