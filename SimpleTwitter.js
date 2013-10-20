@@ -13,6 +13,13 @@
             // コレクションの全データ
             return Players.find();
         };
+         
+        Template.PlayerList.events = {
+          'click .plus_button' : function() {
+            Players.update(this._id, {$inc: {good : 1}});
+          }
+        };
+        
     }
     //サーバ上でのみ動作する
     if (Meteor.isServer) {
@@ -32,11 +39,11 @@
                 
                 // データ生成
                 var data = [
-                  {playerName : 'たなか', age : 22, good : 0, bad : 0},
-                  {playerName : 'もり', age : 22, good : 0, bad : 0},
-                  {playerName : 'こいけ', age : 24, good : 0, bad : 0},
-                  {playerName : 'こばやし', age : 22, good : 0, bad : 0}, 
-                  {playerName : 'ばば', age : 26, good : 0, bad : 0}
+                  {playerName : 'たなか', age : 22, good : 0},
+                  {playerName : 'もり', age : 22, good : 0},
+                  {playerName : 'こいけ', age : 24, good : 0},
+                  {playerName : 'こばやし', age : 22, good : 0}, 
+                  {playerName : 'ばば', age : 26, good : 0}
                 ];
                 data.forEach(function(player) {
                   Players.insert(player);

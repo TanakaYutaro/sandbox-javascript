@@ -19,7 +19,6 @@
         <th>Name</th>
         <th>Age</th>
         <th>Good</th>
-        <th>Bad</th>    
       </tr>
       {{#each Players}}
       <tr>
@@ -27,11 +26,7 @@
         <td>{{age}}</td>
         <td>
           {{good}}
-          <input class="plus_button" type="button" value="+" />
-        </td>
-        <td>
-          {{bad}}
-          <input class="minus_button" type="button" value="-" />
+          <input class="plus_button" type="button" value="↑" />
         </td>
       </tr>
       {{/each}}
