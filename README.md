@@ -16,15 +16,20 @@
 
 ## Meteor.js 覚え書き
 
-### Meteor.js の導入からプロジェクト実行
+### 概要
 
-`$ curl install.meteor.com sh--` // インストール
-`$ meteor create <project_name>` // プロジェクト作成
-`$ ` // 
-`$ ` // 
-`$ ` // 
-`$ ` // 
-`$ ` // 
-`$ ` // 
+### 関連
 
+- JavaScript
+- Node.js
+- MongoDB
+- リアクティブプログラミング
+- Sock.JS
+
+### コマンド
+
+- `$ curl install.meteor.com sh--` // インストール
+- `$ meteor create <project_name>` // プロジェクト作成
+- `$ meteor` // プロジェクト実行
+- `$ meteor deploy <host_name>.meteor.com` // デプロイ
 
