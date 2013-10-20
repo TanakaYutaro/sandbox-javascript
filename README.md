@@ -37,4 +37,5 @@
 - `$ meteor` // プロジェクト実行
 - `$ meteor add <PKG_name>` // パッケージの追加
 - `$ meteor deploy [--password] <host_name>.meteor.com` // デプロイ
+- `$ meteor list` // パッケージ一覧
 
