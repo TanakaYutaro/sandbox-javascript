@@ -14,7 +14,7 @@ http://simple-twitter.meteor.com/
 
 ## 開発環境
 - OS : Mac OS X 10.8.5
-- Editor : WebStorm, Vim
+- Editor : WebStorm, Coda2, Vim
 - Browser : Chrome
 
 ## Meteor.js 覚え書き
@@ -42,4 +42,5 @@ http://simple-twitter.meteor.com/
 - `$ meteor deploy [--password] <host_name>.meteor.com` // デプロイ
 - `$ meteor list` // パッケージ一覧
 - `$ meteor remove <PKG_name>` // パッケージ削除
+- `$meteor create --example <sample_name>` // サンプルの実行
 
