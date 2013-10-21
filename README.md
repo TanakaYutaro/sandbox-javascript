@@ -41,4 +41,5 @@ http://simple-twitter.meteor.com/
 - `$ meteor add <PKG_name>` // パッケージの追加
 - `$ meteor deploy [--password] <host_name>.meteor.com` // デプロイ
 - `$ meteor list` // パッケージ一覧
+- `$ meteor remove <PKG_name>` // パッケージ削除
 
