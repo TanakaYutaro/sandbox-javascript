@@ -3,8 +3,14 @@
     // コレクションの生成
     var Players = new Meteor.Collection('players');
 
+
+    
     //クライアント上でのみ動作する
     if (Meteor.isClient) {
+        
+        Meteor.subscribe('all-players');
+
+    
         Template.Header.dateTime = function() {
             return new Date;
         };
@@ -47,6 +53,11 @@
                 ];
                 data.forEach(function(player) {
                   Players.insert(player);
+                });
+                
+                // データ公開
+                Meteor.publish("all-players", function() {
+                  return Players.find();  // 全データ公開
                 });
                 
                 console.log("サーバ初期化完了！");
