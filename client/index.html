@@ -1,22 +1,36 @@
 <head>
   <title>SimpleTwitter</title>
-  <script src="http://oauth.googlecode.com/svn/code/javascript/oauth.js"></script>
-  <script src="http://oauth.googlecode.com/svn/code/javascript/sha1.js"></script>
 </head>
 
 <body>
   {{> Header}}
-  {{> PlayerList}}
-  {{> Twitter}}
 </body>
 
 <template name="Header">
-  <h1>Simple Twitter</h1>
-  <div class="dateTime">{{dateTime}}</div>
+  <div class="container">
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <ul class="nav">
+          <li><a href="#home" data-toggle="tab" class="brand">SimpleTwitter</a></li>
+          <li><a href="#eval" data-toggle="tab">Evaluation</a></li>
+          <li class="active"><a href="#game" data-toggle="tab">TimeLine</a></li>
+        </ul>
+        <ul class="nav pull-right">
+            {{> Twitter}}
+        </ul>
+      </div>
+    </div>
+    <div class="tab-content">
+        <div class="tab-pane" id="home"><h1>Simple Twitter</h1></div>
+        <div class="tab-pane active" id="eval">{{> PlayerList}}</div>
+        <div class="tab-pane" id="game">{{dateTime}}<</div>
+    </div>
+  </div>   
 </template>
 
-<template name="PlayerList">
 
+
+<template name="PlayerList">
   <table class="table" border=1>
       <tr>
         <th>Name</th>
@@ -34,30 +48,19 @@
       </tr>
       {{/each}}
   </table>
-
 </template>
 
 
 <template name="Twitter">
-  {{loginButtons}}
-  
-
-  
-  
-     {{#each users}}
-        {{>user}}
-      {{/each}}
-
-  
+    {{loginButtons  align="right"}}
+    {{#each users}}
+      {{>user}}
+    {{/each}}
 </template>
 
 
 <template name="user">
   <a target="_blank" href="http://twitter.com/{{userName}}"><img src="{{image}}"/> {{fullName}}</a>
   
-  
-  
   <iframe style="width: 300px; height: 20px;" src="//platform.twitter.com/widgets/follow_button.html?screen_name={{services.twitter.screenName}}" height="240" width="320" frameborder="0" scrolling="no"></iframe>
-  
-  
 </template>
