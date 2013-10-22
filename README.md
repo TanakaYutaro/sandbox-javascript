@@ -9,7 +9,7 @@ http://simple-twitter.meteor.com/
 
 ## 参考
 - [Meteor.js](http://www.meteor.com/ "Meteor.js")
-- [Twitter API](http://qiita.com/rev86/items/eaef78275ba295c9858b "Twitter API")
+- [Twitter Plugin](http://www.smashingmagazine.com/2013/06/13/build-app-45-minutes-meteor/ "Twitter Plugin")
 - [マークダウン記法](http://qiita.com/Qiita/items/c686397e4a0f4f11683d "MarkDonw")
 
 ## 開発環境
