@@ -21,3 +21,7 @@ Template.PlayerList.events = {
         });
     }
 };
+
+Template.Twitter.users = function () {
+  return Meteor.users.find();
+};
