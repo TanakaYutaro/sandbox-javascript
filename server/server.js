@@ -51,6 +51,9 @@ Meteor.startup(function () {
         Players.insert(player);
     });
 
+
+
+
     if (Meteor.is_client) {
         console.log("クライアント初期化！");
     } else {
