@@ -1,0 +1,10 @@
+body {
+    background-color: #b3b3b3;
+    font-family: 'Lucida Grande', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+}
+
+.center {
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+}
