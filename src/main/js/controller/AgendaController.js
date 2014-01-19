@@ -1,7 +1,5 @@
 function AgendaController($scope) {
     $scope.agendas = [
-        "hoge",
-        "huga"
     ];
 
 
@@ -10,5 +8,9 @@ function AgendaController($scope) {
             $scope.agendas.push($scope.newAgenda);
             $scope.newAgenda = "";
         }
+    };
+
+    $scope.deleteAgenda = function(index) {
+        $scope.agendas.splice(index, 1);
     };
 }
