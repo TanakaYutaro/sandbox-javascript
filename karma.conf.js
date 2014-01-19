@@ -17,6 +17,7 @@ module.exports = function (config) {
             // lib files
             './bower_components/angular/angular.js',
             './bower_components/jquery/jquery.min.js',
+            './bower_components/angular-mocks/angular-mocks.js',
 
             // main files
             './src/main/js/service/*.js',
