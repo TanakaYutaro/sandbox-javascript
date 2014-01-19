@@ -12,6 +12,7 @@
     <script type="text/javascript" src="../bower_components/angular/angular.js"></script>
 
     <!-- Developed -->
+    <script type="text/javascript" src="./main/js/directive/EnterListener.js"></script>
     <script type="text/javascript" src="./main/js/controller/AgendaController.js"></script>
     <script type="text/javascript" src="./main/js/main.js"></script>
 
@@ -24,7 +25,7 @@
 <div ng-controller="AgendaController">
     <h4>Agenda</h4>
 
-    <input type="text" ng-model="newTheme" ng-enter="addAgenda()"/>
+    <input type="text" ng-model="newAgenda" ng-enter="addAgenda()"/>
 
     <div ng-repeat="agenda in agendas track by $index">{{agenda}}</div>
 </div>
