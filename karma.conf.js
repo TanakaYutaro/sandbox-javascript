@@ -22,6 +22,7 @@ module.exports = function (config) {
             // main files
             './src/main/js/service/*.js',
             './src/main/js/controller/*.js',
+            './src/main/js/main.js',
 
             // test files
             './src/test/service/*.js',
