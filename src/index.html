@@ -50,7 +50,31 @@
 
     <div ng-controller="AgendaController">
         <input type="text" ng-model="newAgenda" ng-enter="addAgenda()" placeholder="Agenda"/>
-        <div class="agendas" ng-repeat="agenda in agendas track by $index" ng-click="deleteAgenda($index)">{{agenda}}</div>
+
+        <div class="agendas" ng-repeat="agenda in agendas track by $index">
+            {{agenda}}
+
+            <div ng-controller="TimerController">
+                <!--<input type="number" ng-model="hour" min="0" max="60" integer/> :-->
+                <!--<input type="number" ng-model="minutes" min="0" max="60" integer/> :-->
+                <!--<input type="number" ng-model="seconds" min="0" max="60" integer/>-->
+                <div class="timer-wrapper">
+                    <input type="text" class="timer" ng-model="hour"> :
+                    <input type="text" class="timer" ng-model="minutes"> :
+                    <input type="text" class="timer" ng-model="seconds">
+                </div>
+                <div class="buttons">
+                    <div ng-if="!Running">
+                        <span class="glyphicon glyphicon-play" ng-click="start()"></span>
+                    </div>
+                    <div ng-if="Running">
+                        <span class="glyphicon glyphicon-stop" ng-click="stop()"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
     </div>
 </div>
 
