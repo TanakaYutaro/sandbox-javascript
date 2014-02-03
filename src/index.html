@@ -50,9 +50,10 @@
 
     <div ng-controller="AgendaController">
         <input type="text" ng-model="newAgenda" ng-enter="addAgenda()" placeholder="Agenda"/>
-
         <div class="agendas" ng-repeat="agenda in agendas track by $index">
-            {{agenda}}
+
+            <span ng-click="deleteAgenda()">×</span>
+            <span>{{agenda}}</span>
 
             <div ng-controller="TimerController">
                 <!--<input type="number" ng-model="hour" min="0" max="60" integer/> :-->
