@@ -3,6 +3,35 @@ body {
     font-family: 'Lucida Grande', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
 }
 
+/* header */
+header  {
+    width: 100%;
+    padding: 5px;
+    color: #FFF;
+    position: fixed;
+    top:0;
+    left:0;
+}
+html header    {
+    position: absolute;
+    top: expression(eval(document.documentElement.scrollTop+0));
+}
+header h1   {
+    float: left;
+    margin: 0 auto;
+    font-size: 140%;
+}
+
+.links {
+    margin-left: 10px;
+    float: left;
+}
+
+/* main frame */
+.main-frame {
+    margin-top: 100px;
+}
+
 .center {
     float: none;
     margin-left: auto;
@@ -15,12 +44,12 @@ input[type="text"] {
 
 /*for Webkit*/
 input::-webkit-input-placeholder {
-    color:    darkslategrey;
+    color: darkslategrey;
 }
 
 /*for Firefox*/
 input:-moz-placeholder {
-    color:    darkslategrey;
+    color: darkslategrey;
 }
 
 input[type="text"].timer, select {
@@ -30,7 +59,7 @@ input[type="text"].timer, select {
 }
 
 .timer-wrapper {
-    margin-top: 50px;
+    margin-top: 10px;
     font-size: 300%;
 }
 
@@ -40,16 +69,31 @@ input[type="text"].timer, select {
 }
 
 .agendas {
-    font-size: 200%;
+    font-size: 150%;
 }
 
+.delete-button {
+    width: 10px;
+    height: 10px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    color: #b3b3b3;
+    background-color: #777777;
+    filter:alpha(opacity=30);
+    -moz-opacity: 0.3;
+    opacity: 0.5;
+}
 
+.delete-button:hover {
+    background-color: #444444;
+    filter:alpha(opacity=100);
+    -moz-opacity: 1;
+    opacity: 1;
+    cursor: default;
+}
 
-
-/*.ng-valid.ng-dirty {*/
-/*background-color: #78FA89;*/
-/*}*/
-
-/*.ng-invalid.ng-dirty {*/
-/*background-color: #FA787E;*/
-/*}*/
+.contents-area {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
