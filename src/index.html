@@ -47,30 +47,28 @@
 
     <div ng-controller="AgendaController">
         <input type="text" ng-model="newAgenda" ng-enter="addAgenda()" placeholder="Agenda"/>
-        <div class="agendas" ng-repeat="agenda in agendas track by $index">
 
-
-
-            <div ng-controller="TimerController">
+        <div ng-repeat="agenda in agendas track by $index">
+            <div ng-controller="TimerController" class="contents-area">
+                <div>
+                    <span class="delete-button" ng-click="deleteAgenda($index)">×</span>
+                    <span class="agendas">{{agenda}}</span>
+                </div>
                 <div class="timer-wrapper">
                     <!--<input type="text" class="timer" ng-model="hour"> :-->
                     <input type="text" class="timer" ng-model="minutes"> :
                     <input type="text" class="timer" ng-model="seconds">
                 </div>
-                <div class="buttons">
-                    <span ng-click="deleteAgenda()">×</span>
-                    <span>{{agenda}}</span>
+                <div>
                     <span ng-if="!Running">
-                        <span class="glyphicon glyphicon-play" ng-click="start()"></span>
+                        <span class="glyphicon glyphicon-play buttons" ng-click="start()"></span>
                     </span>
                     <span ng-if="Running">
-                        <span class="glyphicon glyphicon-stop" ng-click="stop()"></span>
+                        <span class="glyphicon glyphicon-stop buttons" ng-click="stop()"></span>
                     </span>
                 </div>
             </div>
         </div>
-
-
     </div>
 </div>
 

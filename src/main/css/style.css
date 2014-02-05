@@ -15,12 +15,12 @@ input[type="text"] {
 
 /*for Webkit*/
 input::-webkit-input-placeholder {
-    color:    darkslategrey;
+    color: darkslategrey;
 }
 
 /*for Firefox*/
 input:-moz-placeholder {
-    color:    darkslategrey;
+    color: darkslategrey;
 }
 
 input[type="text"].timer, select {
@@ -30,7 +30,7 @@ input[type="text"].timer, select {
 }
 
 .timer-wrapper {
-    margin-top: 50px;
+    margin-top: 10px;
     font-size: 300%;
 }
 
@@ -40,16 +40,31 @@ input[type="text"].timer, select {
 }
 
 .agendas {
-    font-size: 200%;
+    font-size: 150%;
 }
 
+.delete-button {
+    color: #b3b3b3;
+    background-color: #777777;
+    filter:alpha(opacity=30);
+    -moz-opacity: 0.3;
+    opacity: 0.5;
+    height: 10px;
+    width: 15px;
+    border-radius:5px;
+    -moz-border-radius:5px;
+    -webkit-border-radius: 5px;
+}
 
+.delete-button:hover {
+    background-color: #444444;
+    filter:alpha(opacity=100);
+    -moz-opacity: 1;
+    opacity: 1;
+    cursor: default;
+}
 
-
-/*.ng-valid.ng-dirty {*/
-/*background-color: #78FA89;*/
-/*}*/
-
-/*.ng-invalid.ng-dirty {*/
-/*background-color: #FA787E;*/
-/*}*/
+.contents-area {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
