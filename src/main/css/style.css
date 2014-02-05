@@ -44,16 +44,16 @@ input[type="text"].timer, select {
 }
 
 .delete-button {
+    width: 10px;
+    height: 10px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
     color: #b3b3b3;
     background-color: #777777;
     filter:alpha(opacity=30);
     -moz-opacity: 0.3;
     opacity: 0.5;
-    height: 10px;
-    width: 15px;
-    border-radius:5px;
-    -moz-border-radius:5px;
-    -webkit-border-radius: 5px;
 }
 
 .delete-button:hover {
