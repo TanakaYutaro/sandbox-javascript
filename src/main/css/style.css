@@ -3,6 +3,35 @@ body {
     font-family: 'Lucida Grande', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
 }
 
+/* header */
+header  {
+    width: 100%;
+    padding: 5px;
+    color: #FFF;
+    position: fixed;
+    top:0;
+    left:0;
+}
+html header    {
+    position: absolute;
+    top: expression(eval(document.documentElement.scrollTop+0));
+}
+header h1   {
+    float: left;
+    margin: 0 auto;
+    font-size: 140%;
+}
+
+.links {
+    margin-left: 10px;
+    float: left;
+}
+
+/* main frame */
+.main-frame {
+    margin-top: 100px;
+}
+
 .center {
     float: none;
     margin-left: auto;
