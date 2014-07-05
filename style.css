@@ -1,0 +1,12 @@
+#main {
+    padding: 20px
+}
+
+.green {
+    background-color: green;
+}
+
+.panel {
+    border: 1px solid;
+    padding: 10px;
+}
