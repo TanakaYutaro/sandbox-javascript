@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Function Define</title>
+    <script type="text/javascript" src="../assert/assert.js"></script>
+    <link type="text/css" rel="stylesheet" href="../assert/assert.css">
+</head>
+<body>
+
+<script type="text/javascript">
+    function isNimble() {
+        return true;
+    }
+    assert(typeof window.isNimble === "function", "isNimble is defined.");
+    assert(isNimble.name === "isNimble", "isNimble has name.");
+
+
+    var canFly = function () {
+        return true;
+    };
+    assert(typeof window.canFly === "function", "canFly is defined.");
+    assert(canFly.name === "", "canFly has no name, so has empty.");
+
+    window.isDeadly = function () {
+        return true;
+    };
+    assert(typeof window.isDeadly === "function", "isDeadly is defined.");
+
+
+    function outer() {
+        assert(typeof inner === "function", "inner() included in scope before its define.");
+        function inner() {
+        }
+
+        assert(typeof inner === "function", "inner() included in scope after its define.");
+        assert(window.inner === undefined, "inner() doesn't included in  scope.");
+    }
+    outer();
+
+    assert(window.inner === undefined, "inner() still doesn't included in scope");
+
+    window.wieldsSword = function swingsSword() {
+        return true;
+    };
+    assert(window.wieldsSword.name === 'swingsSword', "wieldSword's real name is 'swingsSword'");
+
+
+</script>
+
+</body>
+</html>
