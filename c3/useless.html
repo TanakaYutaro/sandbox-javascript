@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Useless</title>
+    <script type="text/javascript" src="../assert/assert.js"></script>
+    <link type="text/css" rel="stylesheet" href="../assert/assert.css">
+</head>
+<body>
+<script>
+    var text = "Urhiiii";
+
+    function useless(callback) {
+        return callback();
+    }
+
+    assert(useless(function () {
+        return text;
+    }) === text,
+            "Can use this！ " + text);
+</script>
+</body>
+</html>
