@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>warmSound</title>
+    <script type="text/javascript" src="../assert/assert.js"></script>
+    <link type="text/css" rel="stylesheet" href="../assert/assert.css">
+</head>
+<body>
+
+<script type="text/javascript">
+    // Named function recursive
+    function chirp(n) {
+        return n > 1 ? chirp(n - 1) + "-chirp" : "chirp";
+    }
+
+    assert(chirp(3) == "chirp-chirp-chirp", "Expected");
+
+    // Anonymous function recursive
+    var ninja = {
+        chirp: function (n) {
+            return n > 1 ? ninja.chirp(n - 1) + "-chirp" : "chirp"; // ninja -> this is OK
+        }
+    };
+
+    assert(ninja.chirp(3) == "chirp-chirp-chirp", "Expected");
+</script>
+
+</body>
+</html>
