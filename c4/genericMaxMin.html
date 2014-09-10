@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generic Max Min</title>
+    <script type="text/javascript" src="../assert/assert.js"></script>
+    <link type="text/css" rel="stylesheet" href="../assert/assert.css">
+</head>
+<body>
+
+<script type="text/javascript">
+    function smallest(array) {
+        return Math.min.apply(Math, array);
+    }
+
+    function largest(array){
+        return Math.max.apply(Math, array);
+    }
+
+    assert(smallest([0,1,2,3]) == 0, "Find min!");
+    assert(largest([0,1,2,3]) == 3, "Find max!");
+
+</script>
+
+</body>
+</html>
