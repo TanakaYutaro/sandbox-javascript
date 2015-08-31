@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Recursive</title>
+    <script type="text/javascript" src="../../assert/assert.js"></script>
+    <link type="text/css" rel="stylesheet" href="../../assert/assert.css">
+</head>
+<body>
+
+<script type="text/javascript">
+    var ninja = {
+        chirp: function (n) {
+            return n > 1 ? ninja.chirp(n - 1) + "-chirp" : "chirp";
+        }
+    };
+
+    var samurai = {
+        chirp: ninja.chirp
+    };
+
+    // New
+    ninja = {};
+
+    try {
+        assert(samurai.chirp(3) == "chirp-chirp-chirp", "ORZ");
+    }
+    catch(e) {
+        assert(false, "Oh, where is ninja.chirp?");
+    }
+
+</script>
+
+</body>
+</html>

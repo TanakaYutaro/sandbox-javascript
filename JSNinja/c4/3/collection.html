@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script type="text/javascript" src="../../assert/assert.js"></script>
+    <link type="text/css" rel="stylesheet" href="../../assert/assert.css">
+</head>
+<body>
+
+<script type="text/javascript">
+    var store = {
+        nextId: 1,
+
+        cache: {},
+
+        add: function (fn) {
+            if (!fn.id) {// new function has no id
+                fn.id = store.nextId++;
+                return !!(store.cache[fn.id] = fn);
+            }
+        }
+    };
+
+    function ninja() {
+
+    }
+
+    assert(store.add(ninja), "Add by safe");
+    assert(!store.add(ninja), "Add only 1 time");
+</script>
+
+</body>
+</html>

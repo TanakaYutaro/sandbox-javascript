@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script type="text/javascript" src="../../assert/assert.js"></script>
+    <link type="text/css" rel="stylesheet" href="../../assert/assert.css">
+</head>
+<body>
+
+<input id="first"/>
+<input id="second"/>
+
+<script type="text/javascript">
+    var elems = {
+        length: 0,
+
+        add: function (elem) {
+            Array.prototype.push.call(this, elem);
+        },
+
+        gather: function (id) {
+            this.add(document.getElementById(id));
+        }
+    };
+
+    elems.gather("first");
+    assert(elems.length == 1 && elems[0].nodeType, "OK getting elements!");
+
+
+    elems.gather("second");
+    assert(elems.length == 2 && elems[1].nodeType, "Another OK!");
+</script>
+
+</body>
+</html>

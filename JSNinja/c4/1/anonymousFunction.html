@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Anonymous</title>
+    <script type="text/javascript" src="../../assert/assert.js"></script>
+    <link type="text/css" rel="stylesheet" href="../../assert/assert.css">
+</head>
+<body>
+
+<script type="text/javascript">
+    window.onload = function () {
+        assert(true, 'power!');
+    };
+
+    var ninja = {
+        // Anonymous function
+        shout: function () {
+            assert(true, "Ninja");
+        },
+
+        // Named function
+        shout2: function shout2() {
+
+        }
+    };
+
+    ninja.shout();
+
+    setTimeout(
+            function () {
+                assert(true, "Forever!");
+            }, 500);
+
+</script>
+
+</body>
+</html>

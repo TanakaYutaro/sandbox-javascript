@@ -1,0 +1,55 @@
+<html>
+<head>
+    <title>Test Suite</title>
+    <script>
+
+        (function () {
+            var results;
+            this.assert = function assert(value, desc) {
+                var li = document.createElement("li");
+                li.className = value ? "pass" : "fail";
+                li.appendChild(document.createTextNode(desc));
+                results.appendChild(li);
+                if (!value) {
+                    li.parentNode.parentNode.className = "fail";
+                }
+                return li;
+            };
+            this.test = function test(name, fn) {
+                results = document.getElementById("results");
+                results = assert(true, name).appendChild(document.createElement("ul"));
+                fn();
+            };
+        })();
+
+        window.onload = function () {
+            test("TestA.", function () {
+                assert(true, "1st assert end");
+                assert(true, "2nd assert end");
+                assert(true, "3rd assert end");
+            });
+            test("TestB.", function () {
+                assert(true, "1st test end");
+                assert(false, "2nd test fail");
+                assert(true, "3rd test end");
+            });
+            test("TestC.", function () {
+                assert(null, "Fail");
+                assert(5, "OK")
+            });
+        };
+    </script>
+    <style>
+        #results li.pass {
+            color: green;
+        }
+
+        #results li.fail {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<ul id="results"></ul>
+</body>
+</html>

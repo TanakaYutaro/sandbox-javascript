@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Scope</title>
+    <script type="text/javascript" src="../assert/assert.js"></script>
+    <link type="text/css" rel="stylesheet" href="../assert/assert.css">
+</head>
+<body>
+
+<script type="text/javascript">
+    assert(true, "|------------ before OUTER ------------|");
+    assert(typeof outer === 'function', "outer() is in scope.");
+    assert(typeof inner === 'function', "inner() is in scope.");
+    assert(typeof a === 'number', "a is in scope.");
+    assert(typeof b === 'number', "b is in scope.");
+    assert(typeof c === 'number', "c is in scope.");
+
+    function outer() {
+        assert(true, "|------------ in OUTER & before a ------------|");
+        assert(typeof outer === 'function', "outer() is in scope.");
+        assert(typeof inner === 'function', "inner() is in scope.");
+        assert(typeof a === 'number', "a is in scope.");
+        assert(typeof b === 'number', "b is in scope.");
+        assert(typeof c === 'number', "c is in scope.");
+
+        var a = 1;
+
+        assert(true, "|------------ in OUTER & after a ------------|");
+        assert(typeof outer === 'function', "outer() is in scope.");
+        assert(typeof inner === 'function', "inner() is in scope.");
+        assert(typeof a === 'number', "a is in scope.");
+        assert(typeof b === 'number', "b is in scope.");
+        assert(typeof c === 'number', "c is in scope.");
+
+        function inner() {
+        }
+
+        var b = 2;
+
+        assert(true, "|------------ in OUTER & after inner(), b ------------|");
+        assert(typeof outer === 'function', "outer() is in scope.");
+        assert(typeof inner === 'function', "inner() is in scope.");
+        assert(typeof a === 'number', "a is in scope.");
+        assert(typeof b === 'number', "b is in scope.");
+        assert(typeof c === 'number', "c is in scope.");
+
+        if (a == 1) {
+            var c = 3;
+            assert(true, "|------------ in OUTER & in IF ------------|");
+            assert(typeof outer === 'function', "outer() is in scope.");
+            assert(typeof inner === 'function', "inner() is in scope.");
+            assert(typeof a === 'number', "a is in scope.");
+            assert(typeof b === 'number', "b is in scope.");
+            assert(typeof c === 'number', "c is in scope.");
+        }
+
+        assert(true, "|------------ in OUTER & after IF ------------|");
+        assert(typeof outer === 'function', "outer() is in scope.");
+        assert(typeof inner === 'function', "inner() is in scope.");
+        assert(typeof a === 'number', "a is in scope.");
+        assert(typeof b === 'number', "b is in scope.");
+        assert(typeof c === 'number', "c is in scope.");
+    }
+
+    outer();
+
+    assert(true, "|------------ after OUTER & after IF ------------|");
+    assert(typeof outer === 'function', "outer() is in scope.");
+    assert(typeof inner === 'function', "inner() is in scope.");
+    assert(typeof a === 'number', "a is in scope.");
+    assert(typeof b === 'number', "b is in scope.");
+    assert(typeof c === 'number', "c is in scope.");
+
+</script>
+
+</body>
+</html>

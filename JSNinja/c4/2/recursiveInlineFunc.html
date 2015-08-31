@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>RecursiveInlineFunction</title>
+    <script type="text/javascript" src="../../assert/assert.js"></script>
+    <link type="text/css" rel="stylesheet" href="../../assert/assert.css">
+</head>
+<body>
+
+<script type="text/javascript">
+    var ninja = {
+        chirp: function signal(n) { // Named inline function
+            return n > 1 ? signal(n - 1) + "-chirp" : "chirp";
+        }
+    };
+    assert(ninja.chirp(3) == "chirp-chirp-chirp", "OK");
+
+    var samurai = {
+        chirp: ninja.chirp
+    };
+
+    ninja = {};
+
+    assert(samurai.chirp(3) == "chirp-chirp-chirp", "OK");
+
+
+    var ninja2 = function myNinja() {
+        assert(ninja2 == myNinja, "this func has 2 name");
+    };
+
+    ninja2();
+
+    assert(typeof myNinja == "undefined", "Cant call inline function name");
+
+
+</script>
+
+</body>
+</html>

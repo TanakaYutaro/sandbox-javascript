@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Comparator</title>
+</head>
+<body>
+
+<script>
+    // Sort literal
+    var values = [ 213, 16, 2058, 54, 10, 1965, 57, 9];
+    var sorted = values.sort();
+    sorted.forEach(function (elem, index) {
+        console.log(index + " | " + elem);
+    });
+
+    // Descending order by Number
+    var sortedComparatorDesc = values.sort(function (v1, v2) {
+        return v2 - v1;
+    });
+    sortedComparatorDesc.forEach(function (elem, index) {
+        console.log(index + " | " + elem);
+    });
+
+    // Ascending order by Number
+    var sortedComparatorAsc = values.sort(function (v1, v2) {
+        return v1 - v2;
+    });
+    sortedComparatorAsc.forEach(function (elem, index) {
+        console.log(index + " | " + elem);
+    });
+</script>
+
+</body>
+</html>
