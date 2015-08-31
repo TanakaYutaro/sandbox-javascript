@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja" ng-app="TimerJS">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <!-- Libraries -->
+    <link rel="stylesheet" type="text/css" href="../bower_components/jquery/jquery.min.js"/>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <script type="text/javascript" src="../bower_components/angular/angular.js"></script>
+
+    <!-- Developed -->
+    <script type="text/javascript" src="./main/js/service/TimerService.js"></script>
+    <script type="text/javascript" src="./main/js/directive/EnterListener.js"></script>
+    <script type="text/javascript" src="./main/js/controller/TimerController.js"></script>
+    <script type="text/javascript" src="./main/js/controller/AgendaController.js"></script>
+    <script type="text/javascript" src="./main/js/main.js"></script>
+    <link rel="stylesheet" type="text/css" href="./main/css/style.css"/>
+
+    <title>StopWatchJS</title>
+</head>
+<body>
+
+<header class="text-center">
+    <h1>TimerJS</h1>
+    <div class="links">
+        <a href="https://github.com/TanakaYutaro/TimerJS">Repo</a>
+        <a href="http://yutarotanaka.com/blog/">Blog</a>
+    </div>
+</header>
+
+<div class="container text-center main-frame">
+    <div ng-controller="TimerController">
+        <div class="timer-wrapper">
+            <!--<input type="text" class="timer" ng-model="hour"> :-->
+            <input type="text" class="timer" ng-model="minutes"> :
+            <input type="text" class="timer" ng-model="seconds">
+        </div>
+        <div class="buttons">
+            <div ng-if="!Running">
+                <span class="glyphicon glyphicon-play" ng-click="start()"></span>
+            </div>
+            <div ng-if="Running">
+                <span class="glyphicon glyphicon-stop" ng-click="stop()"></span>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <div ng-controller="AgendaController">
+        <input type="text" ng-model="newAgenda" ng-enter="addAgenda()" placeholder="Agenda"/>
+
+        <div ng-repeat="agenda in agendas track by $index">
+            <div ng-controller="TimerController" class="contents-area">
+                <div>
+                    <span class="delete-button" ng-click="deleteAgenda($index)">×</span>
+                    <span class="agendas">{{agenda}}</span>
+                </div>
+                <div class="timer-wrapper">
+                    <!--<input type="text" class="timer" ng-model="hour"> :-->
+                    <input type="text" class="timer" ng-model="minutes"> :
+                    <input type="text" class="timer" ng-model="seconds">
+                </div>
+                <div>
+                    <span ng-if="!Running">
+                        <span class="glyphicon glyphicon-play buttons" ng-click="start()"></span>
+                    </span>
+                    <span ng-if="Running">
+                        <span class="glyphicon glyphicon-stop buttons" ng-click="stop()"></span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
