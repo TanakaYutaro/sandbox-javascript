@@ -1,0 +1,18 @@
+#main {
+    padding: 10px
+}
+
+.green {
+    background-color: lightseagreen;
+}
+
+.panel {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border: 1px solid;
+    padding: 10px;
+    display: inline-block;
+    margin-top: 5px;
+}
