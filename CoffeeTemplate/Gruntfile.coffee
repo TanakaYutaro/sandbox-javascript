@@ -5,27 +5,31 @@ module.exports = (grunt)->
       coffee:
         files: ['src/**/*.coffee']
         tasks: 'coffee:app'
-      coffee_spec:
-        files: ['spec/**/*.coffee']
-        tasks: 'coffee:spec'
     coffee:
       app:
         files: [
           expand: true
           cwd: 'src/'
           src: ['**/*.coffee']
-          dest: 'Resources/'
+          dest: 'src/js'
           ext: '.js'
         ]
-      spec:
+      deploy:
         files: [
           expand: true
-          cwd: 'spec/'
-          src: ['**/*.coffee']
-          dest: 'Resources/spec/'
+          cwd: 'src/'
+          src: ['**/_all.coffee']
+          dest: 'dist/'
           ext: '.js'
         ]
+    concat:
+      dist:
+        src: ['src/hello.coffee', 'src/user.coffee', 'src/main.coffee']
+        dest: 'src/_all.coffee'
 
   grunt.loadNpmTasks 'grunt-contrib-coffee'
   grunt.loadNpmTasks 'grunt-contrib-watch'
+  grunt.loadNpmTasks('grunt-contrib-concat');
+
   grunt.registerTask 'default', ['watch']
+  grunt.registerTask 'deploy', ['concat', 'coffee:deploy']
