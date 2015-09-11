@@ -14,7 +14,7 @@ module.exports = (grunt)->
           dest: 'src/js'
           ext: '.js'
         ]
-      deploy:
+      dist:
         files: [
           expand: true
           cwd: 'src/'
@@ -36,4 +36,5 @@ module.exports = (grunt)->
   grunt.loadNpmTasks 'grunt-karma'
 
   grunt.registerTask 'default', ['watch']
-  grunt.registerTask 'deploy', ['concat', 'coffee:deploy']
+  grunt.registerTask 'publish', ['concat', 'coffee:dist']
+  grunt.registerTask 'spec', ['concat', 'karma']
