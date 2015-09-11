@@ -26,10 +26,14 @@ module.exports = (grunt)->
       dist:
         src: ['src/hello.coffee', 'src/user.coffee', 'src/main.coffee']
         dest: 'src/_all.coffee'
+    karma:
+      unit:
+        configFile: 'karma.conf.coffee'
 
   grunt.loadNpmTasks 'grunt-contrib-coffee'
   grunt.loadNpmTasks 'grunt-contrib-watch'
-  grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks 'grunt-contrib-concat'
+  grunt.loadNpmTasks 'grunt-karma'
 
   grunt.registerTask 'default', ['watch']
   grunt.registerTask 'deploy', ['concat', 'coffee:deploy']
